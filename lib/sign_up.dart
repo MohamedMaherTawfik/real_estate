@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:real_estate/Homepage.dart';
 import 'package:real_estate/login.dart';
 
 class SignUp extends StatefulWidget {
@@ -17,11 +17,11 @@ class _SignUpState extends State<SignUp> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('Welcome',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
+          title: Text('Welcome',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
           actions: [
             IconButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
-            }, icon: Icon(Icons.login_outlined,size: 30,))
+            }, icon: Icon(Icons.login_outlined,size: 30,color: Colors.white,))
           ],
         ),
         body: Container(
@@ -85,7 +85,9 @@ class _SignUpState extends State<SignUp> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 child:InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                    },
                     child: Container(
                       decoration: BoxDecoration(color:Color.fromARGB(255, 4, 107, 190),borderRadius: BorderRadius.circular(10)),
                       height: 50,

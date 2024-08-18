@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:real_estate/Homepage.dart';
 import 'package:real_estate/sign_up.dart';
 
 class Login extends StatefulWidget {
@@ -16,12 +17,13 @@ class _LoginState extends State<Login> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('Welcome back',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
+          title: Text('Welcome back',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
           actions: [
             IconButton(onPressed: (){}, icon: Icon(Icons.sentiment_satisfied))
           ],
         ),
         body: Container(
+          color: Colors.grey.shade200,
           margin: EdgeInsets.symmetric(horizontal: 5),
           child: ListView(
             children: [
@@ -74,7 +76,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                  },
                   child: Container(
                     decoration: BoxDecoration(color:Colors.blue,borderRadius: BorderRadius.circular(10)),
                     height: 50,
